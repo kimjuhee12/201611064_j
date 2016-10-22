@@ -1,4 +1,5 @@
 package com.sd.Dice;
+import com.sd.DiceGame.*;
 
 public class DiceGame {
     Player p1;
