@@ -1,4 +1,4 @@
-package com.sd.Dice;
+package com.sd.DiceGame;
 import com.sd.DiceGame.*;
 
 class Player {
