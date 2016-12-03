@@ -1,16 +1,16 @@
 package com.sd.ch8;
 
-public class Rectangle implements Shape {
+public class Rectangle extends Shape {
 	private double width;
-	private doubleheight;
+	private double height;
 	private double area;
 	private double perimeter;
 	
 	public Rectangle(double width, double height) {
 		this.width = width;
 		this.height = height;
-		this.area= width * height;
-		this.perimeter = 2 * (width + height);
+		this.area = width * height;
+        this.perimeter = 2 * (width + height);
 	}
 	
 	@Override
@@ -21,5 +21,9 @@ public class Rectangle implements Shape {
 	@Override
 	public double calcPerimeter() {
 		return this.perimeter;
+	}
+	
+	public String toString() {
+		return "Rectangle... " + super.toString();
 	}
 }
