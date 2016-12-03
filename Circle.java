@@ -1,23 +1,27 @@
 package com.sd.ch8;
 
-public class Circle extends Point {
-	private double radius;
+public class Circle extends Shape {
+    private double radius;
+	private double area;
+	private double perimeter;
+
+    public Circle(double radius) {
+        this.radius = radius;
+        this.area = Math.PI * radius * radius;
+        this.perimeter = 2 * Math.PI * radius;
+    }
 	
-	public Circle(int x, int y, double r) {
-		super(x,y);
-		this.radius=r;
-	}
+    @Override
+    public double calcArea() {
+        return this.area;
+    }
 	
-	public double getRadius() {
-		return this.radius;
-		
-	}public double getArea() {
-		return radius * radius * Math.PI;	
-	}
-	
-	public static void main(String[] args) {
-		Circle myCircle = new Circle(10,10,5);
-		Double myArea = myCircle.getArea();
-		System.out.print("Area is " + myArea);
-	}
+    @Override
+    public double calcPerimeter() {
+        return this.perimeter;
+    }
+    public String toString() {
+        return "Circle... "+super.toString();
+    }
 }
+
