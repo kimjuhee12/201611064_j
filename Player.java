@@ -1,24 +1,41 @@
-package com.sd.DiceGame;
-import com.sd.DiceGame.*;
+package com.sd.game;
 
 class Player {
     private String name=null;
+	private String yut = null;
     private int num=0;
+	private static final int DICE = 1, YUT = 2;
     public Player(String name) {
-        this.name=name;
+        setName(name);
     }
-	public String getName() {
-		return name;
+
+	public void play(int fInt) {
+		switch(fInt) {
+		case DICE:
+			Dice d = new Dice();
+			num = d.roll();
+			break;
+		case YUT:
+			Yut y = new Yut();
+			num = y.roll();
+			yut = y.getYut();
+			break;
+		default:
+			break;
+		}
 	}
-    public void play() {
-        Dice d = new Dice();
-        d.roll();
-        this.num=d.getNum();
-    }
+	
     public int getNum() {
         return this.num;    
 	}
-	public static void main(String[] args) {
-		System.out.println("Player");
+	public String getYut() {
+		return this.yut;
 	}
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 }

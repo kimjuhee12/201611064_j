@@ -1,27 +1,33 @@
-package com.sd.DiceGame;
-import com.sd.DiceGame.*;
+package com.sd.game;
 
 public class DiceGame {
-    Player p1;
-    Player p2;
-    public void startplay() {
-        Player p1 = new Player("P1");
-        Player p2 = new Player("P2");
-		p1.play();
-		p2.play();
+    private Player p1;
+    private Player p2;
+	public DiceGame(String name1, String name2) {
+		p1 = new Player(name1);
+        p2 = new Player(name2);
+	}
+	public void play() {
+		p1.play(1);
+		p2.play(1);
+	}
+	public Player getP1() {
+		return p1;
+	}
+	public Player getP2() {
+		return p2;
+	}
+
+	public String score() {
 		int P1_point = p1.getNum();
 		int P2_point = p2.getNum();
         if (P1_point > P2_point) {
-            System.out.println(p1.getName() + " won, Congratulation!!");
+            return "Winner is " + p1.getName();
         }
         else if (P1_point < P2_point) {
-            System.out.println(p2.getName() + " won, Congratulation!!");
+            return "Winner is " + p2.getName();
         }
         else
-            System.out.println(" Oh, no...draw");
+            return "draw";
     }
-	public static void main(String[] args) {
-		DiceGame d = new DiceGame();
-		d.startplay();
-	}
 }

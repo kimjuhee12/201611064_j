@@ -1,18 +1,20 @@
-package com.sd.DiceGame;
-import com.sd.DiceGame.*;
+package com.sd.game;
 
-class Dice {
-    private int number = 0;
-    public void roll() {   
-        number = (int) (Math.random() * 6+1);
-        System.out.println("Turn on " + number);
-    }
-    public int getNum() {
-        return this.number;
-    }
-public static void main(String[] args) {
-		Dice d = new Dice();
-		d.roll();
-		
+public class Dice {
+	private int number = 0;
+	
+	public int roll() {
+		this.number = (int) (Math.random() * 6) + 1;
+		return this.number;
+	}
+	
+	
+	public void setNum(int number) {
+		this.number = number;
+	}
+	
+	
+	public int getNum() {
+		return this.number;
 	}
 }
