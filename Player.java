@@ -23,8 +23,9 @@ class Player {
 		default:
 			break;
 		}
+		
 	}
-	
+	//switch문으로 윷놀이와 주사위게임 경우 나누기
     public int getNum() {
         return this.num;    
 	}

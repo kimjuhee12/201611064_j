@@ -6,6 +6,7 @@ public class Yut extends Dice {
 	
 	public int roll() {
 		setNum((int) (Math.random() * 6) + 1);
+		// 0을 제외한 6개의 숫자 랜덤
 		setYut();
 		return getNum();
 	}
@@ -22,6 +23,7 @@ public class Yut extends Dice {
 			yut = "Yut";
 		else if (getNum() == 6)
 			yut = "Mo";
+		// 주사위에서 사용한 Num을 '도 개 걸 윷 모 낙'으로 
 	}
 	
 	public String getYut() {
